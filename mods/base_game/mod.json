@@ -1,11 +1,13 @@
 {
-	"priority": 0,
-	"name": "Base Game",
-	"color": "6633CC",
-	"startupDefault": true,
-	"description": "",
-	"website": "",
-	"author": "The Funkin Crew",
-	"version": "1.0.0",
-	"enabled": true
+    "id": "",
+    "name": "Base Game",
+    "description": "",
+    "author": "The Funkin Crew",
+    "version": "1.0.0",
+    "priority": 0,
+    "color": "#6633CC",
+    "website": "",
+    "enabled": true,
+    "startupDefault": true,
+    "folder": "base_game"
 }
