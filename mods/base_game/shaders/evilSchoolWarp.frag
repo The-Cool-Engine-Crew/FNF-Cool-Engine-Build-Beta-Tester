@@ -1,56 +1,29 @@
 #pragma header
 
 uniform float uTime;
-uniform float uWaveX;
-uniform float uWaveY;
-uniform float uFreqX;
-uniform float uFreqY;
-uniform float uSpeedX;
-uniform float uSpeedY;
-uniform float uRipple;
-uniform float uVignette;
 
 void main()
 {
     vec2 uv = openfl_TextureCoordv;
 
-    float wX  = uWaveX;
-    float wY  = uWaveY;
-    float fX  = uFreqX;
-    float fY  = uFreqY;
-    float sX  = uSpeedX;
-    float sY  = uSpeedY;
-    float rip = uRipple;
-    float vig = uVignette;
-    float t   = uTime;
+    // Tiempo quantizado: salta cada ~8 frames (a 60fps = ~7 saltos/seg)
+    float fps = 8.0;
+    float t = floor(uTime * fps) / fps;
 
-    // Onda principal
-    float offX = sin(uv.y * fX + t * sX) * wX;
-    float offY = sin(uv.x * fY + t * sY) * wY;
+    vec2 sc = gl_FragCoord.xy / vec2(1280.0, 720.0);
 
-    // Ripple diagonal
-    float offX2 = sin(uv.y * fX * 0.5 + uv.x * 3.0 + t * sX * 0.7) * rip;
-    float offY2 = sin(uv.x * fY * 0.5 + uv.y * 2.5 + t * sY * 0.8) * rip;
+    float offX = sin(sc.y * 6.0 + t * 0.6) * 0.003;
+    float offY = sin(sc.x * 5.0 + t * 0.45) * 0.002;
+    float offX2 = sin(sc.y * 3.0 + sc.x * 2.5 + t * 0.4) * 0.0015;
+    float offY2 = sin(sc.x * 2.5 + sc.y * 2.0 + t * 0.35) * 0.001;
 
-    // Respiración desde el centro
-    vec2 center  = vec2(0.5, 0.5);
-    float breathe = sin(t * 0.4) * 0.003;
-    vec2 uvWarped = uv + vec2(offX + offX2, offY + offY2);
-    uvWarped = center + (uvWarped - center) * (1.0 + breathe);
+    vec2 rawOffset = vec2(offX + offX2, offY + offY2);
 
-    // FIX: usar flixel_texture2D en lugar de texture2D directamente.
-    // flixel_texture2D aplica openfl_Alphav (alpha del sprite) y los
-    // transform de color de OpenFL.  Sin esto, el sprite ignora su propio
-    // alpha y puede aparecer negro o incorrecto dependiendo del pipeline.
-    vec4 color = flixel_texture2D(bitmap, uvWarped);
+    // Snapear el offset a pasos de 2px en pantalla
+    vec2 pixelStep = vec2(2.0 / 1280.0, 2.0 / 720.0);
+    vec2 snappedOffset = floor(rawOffset / pixelStep) * pixelStep;
 
-    // Viñeta
-    if (vig > 0.0) {
-        vec2 vd = uv - center;
-        float vignette = 1.0 - dot(vd, vd) * vig * 2.5;
-        // Sólo afectar rgb; el alpha ya lo gestiona flixel_texture2D
-        color.rgb *= clamp(vignette, 0.0, 1.0);
-    }
+    vec2 uvWarped = uv + snappedOffset;
 
-    gl_FragColor = color;
+    gl_FragColor = flixel_texture2D(bitmap, uvWarped);
 }
