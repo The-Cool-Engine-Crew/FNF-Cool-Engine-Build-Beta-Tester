@@ -1,0 +1,48 @@
+{
+	"animations": [
+		{
+			"offsetX": 0,
+			"framerate": 24,
+			"offsetY": 0,
+			"prefix": "monster idle",
+			"name": "idle",
+			"looped": false
+		},
+		{
+			"offsetX": -20,
+			"framerate": 24,
+			"offsetY": 51,
+			"prefix": "monster up note",
+			"name": "singUP",
+			"looped": false
+		},
+		{
+			"offsetX": -50,
+			"framerate": 24,
+			"offsetY": -40,
+			"prefix": "monster down",
+			"name": "singDOWN",
+			"looped": false
+		},
+		{
+			"offsetX": -40,
+			"framerate": 24,
+			"offsetY": -10,
+			"prefix": "Monster Right note",
+			"name": "singLEFT",
+			"looped": false
+		},
+		{
+			"offsetX": -31,
+			"framerate": 24,
+			"offsetY": 3,
+			"prefix": "Monster left note",
+			"name": "singRIGHT",
+			"looped": false
+		}
+	],
+	"isPlayer": false,
+	"antialiasing": true,
+	"path": "week2/Monster_Assets",
+	"scale": 1
+}

@@ -1,0 +1,51 @@
+{
+	"positionOffset": [
+		-250,
+		-250
+	],
+	"cameraOffset": [
+		200,
+		230
+	],
+	"isFlxAnimate": true,
+	"animations": [
+		{
+			"offsetX": -60,
+			"framerate": 24,
+			"offsetY": -170,
+			"prefix": "Idle",
+			"name": "idle"
+		},
+		{
+			"offsetX": -70,
+			"framerate": 24,
+			"offsetY": -168,
+			"prefix": "Right",
+			"name": "singRIGHT"
+		},
+		{
+			"offsetX": -60,
+			"framerate": 24,
+			"offsetY": -160,
+			"prefix": "Down",
+			"name": "singDOWN"
+		},
+		{
+			"offsetX": -70,
+			"framerate": 24,
+			"offsetY": -170,
+			"prefix": "Up",
+			"name": "singUP"
+		},
+		{
+			"offsetY": -170,
+			"prefix": "Left",
+			"offsetX": -60,
+			"name": "singLEFT"
+		}
+	],
+	"isPlayer": true,
+	"antialiasing": true,
+	"path": "pico/basic-animations",
+	"scale": 1
+}

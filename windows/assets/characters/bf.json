@@ -1,0 +1,114 @@
+{
+	"gameOverEnd": "gameplay/gameOverEnd",
+	"gameOverSound": "fnf_loss_sfx",
+	"isFlxAnimate": true,
+	"charDeath": "bf-dead",
+	"cameraOffset": [
+		-50,
+		-40
+	],
+	"flipX": true,
+	"gameOverMusic": "gameplay/gameOver",
+	"animations": [
+		{
+			"framerate": 24,
+			"offsetX": 13,
+			"prefix": "BF idle dance",
+			"offsetY": 4,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"framerate": 24,
+			"offsetX": 10,
+			"prefix": "BF NOTE LEFT",
+			"offsetY": 7,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"framerate": 24,
+			"offsetX": 13,
+			"prefix": "BF NOTE LEFT MISS",
+			"offsetY": 18,
+			"looped": false,
+			"name": "singLEFTmiss"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -32,
+			"prefix": "BF NOTE RIGHT",
+			"offsetY": 11,
+			"looped": false,
+			"name": "singRIGHT"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -30,
+			"prefix": "BF NOTE RIGHT MISS",
+			"offsetY": 24,
+			"looped": false,
+			"name": "singRIGHTmiss"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -1,
+			"prefix": "BF NOTE UP",
+			"offsetY": 76,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -10,
+			"prefix": "BF NOTE UP MISS",
+			"offsetY": 70,
+			"looped": false,
+			"name": "singUPmiss"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -2,
+			"prefix": "BF NOTE DOWN",
+			"offsetY": -34,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"framerate": 24,
+			"offsetX": 0,
+			"prefix": "BF NOTE DOWN MISS",
+			"offsetY": -23,
+			"looped": false,
+			"name": "singDOWNmiss"
+		},
+		{
+			"framerate": 24,
+			"offsetX": 12,
+			"prefix": "BF HEY!!",
+			"offsetY": 14,
+			"looped": false,
+			"name": "hey"
+		},
+		{
+			"framerate": 24,
+			"offsetX": -30,
+			"prefix": "Boyfriend YEAH cheer",
+			"offsetY": 20,
+			"looped": false,
+			"name": "yeah cheer"
+		},
+		{
+			"framerate": 24,
+			"offsetX": 0,
+			"prefix": "BF idle shaking",
+			"offsetY": 0,
+			"looped": false,
+			"name": "scared"
+		}
+	],
+	"isPlayer": true,
+	"antialiasing": true,
+	"path": "bf",
+	"scale": 1
+}
