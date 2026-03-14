@@ -32,6 +32,7 @@ var missPool = [];
 // ══════════════════════════════════════════════════════════════════════════
 function onCreate()
 {
+	onInit();
 	scoreManager = new ScoreManager();
 	_createScoreText();
 	_createHealthBar();
@@ -66,6 +67,7 @@ function _createScoreText()
 	var healthBarY = FlxG.save.data.downscroll ? FlxG.height * 0.1 : FlxG.height * 0.98;
 	scoreTxt = makeText(0, healthBarY - 35, '', 20);
 	scoreTxt.fieldWidth = FlxG.width;
+	scoreTxt.antialiasing = FlxG.save.data.antialiasing;
 	scoreTxt.alignment = "center";
 	setTextBorder(scoreTxt, 'outline', 0xFF000000, 2, 1);
 	scoreTxt.font = Paths.font('Funkin.otf');
@@ -192,6 +194,18 @@ function onBeatHit(beat)
 	}
 }
 
+// Offset de posición del rating — configurable desde Opciones > Gameplay > Rating Position
+// Se guarda en FlxG.save.data.ratingOffsetX / ratingOffsetY.
+var posX:Float = 0;
+var posY:Float = 0;
+
+function onInit()
+{
+	// Leer los offsets guardados (default: posición base original = -50, 0)
+	posX = (FlxG.save.data.ratingOffsetX != null) ? FlxG.save.data.ratingOffsetX : -100;
+	posY = (FlxG.save.data.ratingOffsetY != null) ? FlxG.save.data.ratingOffsetY : 0;
+}
+
 // ══════════════════════════════════════════════════════════════════════════
 //  onRatingPopup  ─ replica showRatingPopup()
 // ══════════════════════════════════════════════════════════════════════════
@@ -216,8 +230,8 @@ function onRatingPopup(ratingName, combo)
 
 	ratingSprite.loadGraphic(Paths.image('UI/' + pixelPart1 + ratingName + pixelPart2));
 
-	ratingSprite.x = FlxG.width * 0.55 - 40;
-	ratingSprite.y = FlxG.height * 0.5 - 90;
+	ratingSprite.x = FlxG.width * 0.55 - 40 + posX;
+	ratingSprite.y = FlxG.height * 0.5 - 90 + posY;
 
 	if (!StringTools.startsWith(curStage, 'school'))
 	{
@@ -272,8 +286,8 @@ function _showComboNumbers(combo, pixelPart1, pixelPart2)
 		numScore.visible = true;
 		numScore.loadGraphic(Paths.image('UI/' + pixelPart1 + 'nums/num' + Std.int(i) + pixelPart2));
 
-		numScore.x = FlxG.width * 0.55 + (43 * daLoop) - 90 + 140;
-		numScore.y = FlxG.height * 0.5 + 20;
+		numScore.x = FlxG.width * 0.55 + (43 * daLoop) - 90 + 140 + posX;
+		numScore.y = FlxG.height * 0.5 + 20 + posY;
 
 		if (!StringTools.startsWith(curStage, 'school'))
 		{
@@ -324,8 +338,8 @@ function onMissPopup()
 
 	rating.loadGraphic(Paths.image('UI/normal/score/miss'));
 
-	rating.x = FlxG.width * 0.55 - 40;
-	rating.y = FlxG.height * 0.5 - 90;
+	rating.x = FlxG.width * 0.55 - 40 + posX;
+	rating.y = FlxG.height * 0.5 - 90 + posY;
 
 	if (!StringTools.startsWith(curStage, 'school'))
 	{
