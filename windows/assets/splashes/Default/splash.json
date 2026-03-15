@@ -41,8 +41,8 @@
     "framerate": 24,
     "loopFramerate": 48,
     "offset": [
-      10,
-      -5
+      0,
+      0
     ],
     "startPrefix": "holdCoverStart",
     "loopPrefix": "holdCover",
