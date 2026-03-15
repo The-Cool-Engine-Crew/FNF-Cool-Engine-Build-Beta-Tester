@@ -47,7 +47,7 @@ More features will be added continuously as the engine evolves.
 ### 1️⃣ Clone the repository
 
 ``` bash
-git clone https://github.com/Manux123/FNF-Cool-Engine.git
+git clone https://github.com/The-Cool-Engine-Crew/FNF-Cool-Engine.git
 ```
 
 or download it as a ZIP from GitHub.
@@ -103,7 +103,7 @@ When reporting a bug, include:
 -   Screenshots or videos (if possible)
 -   Console errors
 
-Create an issue here: https://github.com/Manux123/FNF-Cool-Engine/issues
+Create an issue here: https://github.com/The-Cool-Engine-Crew/FNF-Cool-Engine/issues
 
 ------------------------------------------------------------------------
 
