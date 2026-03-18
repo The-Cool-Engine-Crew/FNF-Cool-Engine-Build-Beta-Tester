@@ -7,7 +7,7 @@
   "playData": {
     "difficulties": ["erect", "nightmare"],
     "characters": {
-      "player": "pico",
+      "player": "pico-playable",
       "girlfriend": "nene",
       "opponent": "darnell",
       "instrumental": "erect",
