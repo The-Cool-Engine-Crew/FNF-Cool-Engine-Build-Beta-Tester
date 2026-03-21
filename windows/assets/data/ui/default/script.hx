@@ -236,7 +236,7 @@ function onRatingPopup(ratingName, combo)
 	var pixelPart1 = 'normal/score/';
 	var pixelPart2 = '';
 
-	if (StringTools.startsWith(curStage, 'school'))
+	if (isPixel)
 	{
 		pixelPart1 = 'pixelUI/score/';
 		pixelPart2 = '-pixel';
@@ -255,7 +255,7 @@ function onRatingPopup(ratingName, combo)
 	ratingSprite.x = FlxG.width * 0.55 - 40 + posX;
 	ratingSprite.y = FlxG.height * 0.5 - 90 + posY;
 
-	if (!StringTools.startsWith(curStage, 'school'))
+	if (!isPixel)
 	{
 		ratingSprite.setGraphicSize(Std.int(ratingSprite.width * 0.7));
 		ratingSprite.antialiasing = FlxG.save.data.antialiasing;
@@ -312,7 +312,7 @@ function _showComboNumbers(combo, pixelPart1, pixelPart2)
 		numScore.x = FlxG.width * 0.55 + (43 * daLoop) - 90 + 140 + posX;
 		numScore.y = FlxG.height * 0.5 + 20 + posY;
 
-		if (!StringTools.startsWith(curStage, 'school'))
+		if (!isPixel)
 		{
 			numScore.antialiasing = FlxG.save.data.antialiasing;
 			numScore.setGraphicSize(Std.int(numScore.width * 0.35));
@@ -359,15 +359,23 @@ function onMissPopup()
 	rating.alpha = 1;
 	rating.visible = true;
 
-	rating.loadGraphic(Paths.image('UI/normal/score/miss'));
+	if (isPixel)
+		rating.loadGraphic(Paths.image('UI/pixelUI/score/miss-pixel'));
+	else
+		rating.loadGraphic(Paths.image('UI/normal/score/miss'));
 
 	rating.x = FlxG.width * 0.55 - 40 + posX;
 	rating.y = FlxG.height * 0.5 - 90 + posY;
 
-	if (!StringTools.startsWith(curStage, 'school'))
+	if (!isPixel)
 	{
 		rating.setGraphicSize(Std.int(rating.width * 0.7));
 		rating.antialiasing = FlxG.save.data.antialiasing;
+	}
+	else
+	{
+		rating.setGraphicSize(Std.int(rating.width * PIXEL_ZOOM * 0.7));
+		rating.antialiasing = false;
 	}
 	rating.updateHitbox();
 
