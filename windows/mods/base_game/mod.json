@@ -4,6 +4,7 @@
     "description": "",
     "author": "The Funkin Crew",
     "version": "1.0.0",
+    "developerMode": true,
     "priority": 0,
     "color": "#6633CC",
     "website": "",
