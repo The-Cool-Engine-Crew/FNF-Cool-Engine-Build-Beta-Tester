@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pacman.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DOWN0000" x="5" y="5" width="1880" height="1080"/>
+	<SubTexture name="DOWN0001" x="1895" y="5" width="1880" height="1080"/>
+	<SubTexture name="DOWN0002" x="3785" y="5" width="1880" height="1080"/>
+	<SubTexture name="DOWN0003" x="5" y="1095" width="1880" height="1080"/>
+
+	<SubTexture name="IDLE0000" x="1895" y="1095" width="1880" height="1080"/>
+	<SubTexture name="IDLE0001" x="3785" y="1095" width="1880" height="1080"/>
+	<SubTexture name="IDLE0002" x="5" y="2185" width="1880" height="1080"/>
+
+	<SubTexture name="RIGHT0000" x="3785" y="3275" width="1880" height="1080"/>
+	<SubTexture name="RIGHT0001" x="5" y="4365" width="1880" height="1080"/>
+	<SubTexture name="RIGHT0002" x="1895" y="4365" width="1880" height="1080"/>
+	<SubTexture name="RIGHT0003" x="3785" y="4365" width="1880" height="1080"/>
+
+	<SubTexture name="LEFT0000" x="1895" y="2185" width="1880" height="1080"/>
+	<SubTexture name="LEFT0001" x="3785" y="2185" width="1880" height="1080"/>
+	<SubTexture name="LEFT0002" x="5" y="3275" width="1880" height="1080"/>
+	<SubTexture name="LEFT0003" x="1895" y="3275" width="1880" height="1080"/>
+
+	<SubTexture name="UP0000" x="5915" y="5" width="1880" height="1080"/>
+	<SubTexture name="UP0001" x="5675" y="1095" width="1880" height="1080"/>
+	<SubTexture name="UP0002" x="5675" y="2185" width="1880" height="1080"/>
+	<SubTexture name="UP0003" x="5675" y="3275" width="1880" height="1080"/>
+</TextureAtlas>
